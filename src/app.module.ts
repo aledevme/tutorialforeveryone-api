@@ -14,8 +14,13 @@ import { TutorialsController } from './controllers/tutorial.controller';
 
 @Module({
   imports: [
+    
+    //localhost route
     //MongooseModule.forRoot('mongodb://localhost/tutorialsforeveryone'),
+    
+    //mongodb atlas cloud
     MongooseModule.forRoot('mongodb+srv://aledevme:c8ldcUVgi9Sh1pZf@cluster0.5v234.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
+    
     MongooseModule.forFeature([{name: Tutorial.name, schema: TutorialSchema}])
   ],
   controllers: [AppController, TutorialsController],
