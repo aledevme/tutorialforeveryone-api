@@ -8,8 +8,13 @@ import {Tutorial, TutorialDocument} from '../schemas/tutorial.schema'
 export class TutorialService {
     constructor(@InjectModel(Tutorial.name) private tutorialModel: Model<TutorialDocument>) {}
 
-    async create(Tutorial: Tutorial) : Promise<Tutorial> {
-        const newTutorial = new this.tutorialModel(Tutorial)
+    async all() : Promise<Tutorial[]> {
+        return await this.tutorialModel.find()
+    }
+
+    async create(tutorial: Tutorial) : Promise<Tutorial> {
+        const tutorialModel = new this.tutorialModel(tutorial)
+        const newTutorial = await tutorialModel.save()
         return newTutorial
     }
 }

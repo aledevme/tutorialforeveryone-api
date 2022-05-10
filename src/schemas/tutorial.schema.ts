@@ -6,7 +6,7 @@ export type TutorialDocument = Tutorial & Document
 @Schema()
 export class Tutorial {
     @Prop()
-    name: string;
+    title: string;
 
     @Prop()
     description: string;
