@@ -14,8 +14,8 @@ import { TutorialsController } from './controllers/tutorial.controller';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/tutorialsforeveryone'),
-    //MongooseModule.forRoot('mongodb+srv://aledevme:Alejandro7$.@cluster0.5v234.mongodb.net/tutorialsforeveryone?retryWrites=true&w=majority'),
+    //MongooseModule.forRoot('mongodb://localhost/tutorialsforeveryone'),
+    MongooseModule.forRoot('mongodb+srv://aledevme:c8ldcUVgi9Sh1pZf@cluster0.5v234.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
     MongooseModule.forFeature([{name: Tutorial.name, schema: TutorialSchema}])
   ],
   controllers: [AppController, TutorialsController],
