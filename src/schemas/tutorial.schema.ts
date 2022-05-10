@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
-import { Document } from 'mongoose'
+import { Document, Schema as MongooseSchema } from 'mongoose'
 
 export type TutorialDocument = Tutorial & Document
 
@@ -13,6 +13,9 @@ export class Tutorial {
 
     @Prop()
     readingTime: number;
+
+    @Prop({type: MongooseSchema.Types.Mixed})
+    user:{}
 }
 
 export const TutorialSchema = SchemaFactory.createForClass(Tutorial);
