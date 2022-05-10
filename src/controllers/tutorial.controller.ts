@@ -7,12 +7,13 @@ export class TutorialsController{
     constructor(private readonly tutorialService: TutorialService) {}
 
     @Get()
-    async getAllTutorials(@Res() response, @Body() tutorial: Tutorial){
+    async getAllTutorials(@Res() response){
         const tutorials = await this.tutorialService.all()
         return response.status(HttpStatus.CREATED).json({
             tutorials
         })
     }
+
     @Post()
     async createTutorial(@Res() response, @Body() tutorial: Tutorial){
         const newTutorial = await this.tutorialService.create(tutorial)
@@ -20,4 +21,6 @@ export class TutorialsController{
             newTutorial
         })
     }
+
+    
 }
