@@ -19,10 +19,10 @@ import { TutorialsController } from './controllers/tutorial.controller';
     ConfigModule.forRoot(),
     
     //localhost instance
-    MongooseModule.forRoot('mongodb://localhost/tutorialsforeveryone'),
+    //MongooseModule.forRoot('mongodb://localhost/tutorialsforeveryone'),
     
     //mongodb atlas cloud instance
-    //MongooseModule.forRoot('mongodb+srv://aledevme:c8ldcUVgi9Sh1pZf@cluster0.5v234.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
+    MongooseModule.forRoot('mongodb+srv://aledevme:c8ldcUVgi9Sh1pZf@cluster0.5v234.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
     
     MongooseModule.forFeature([{name: Tutorial.name, schema: TutorialSchema}])
   ],
